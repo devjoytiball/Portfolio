@@ -23,7 +23,7 @@ app.set("views", path.join(__dirname, "views"));
 
 
 
-const PORT = process.env.PORT || 3000;
+
 
 // =========================
 // SESSION CONFIGURATION
@@ -1563,6 +1563,7 @@ app.use((err, req, res, next) => {
 
 });
 // Start server
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,"0.0.0.0",()=>{
+    console.log(`server running on port ${PORT}`);
 });
