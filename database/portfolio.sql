@@ -375,3 +375,4 @@ USE portfolio_db;
 
 SELECT id, title, image FROM projects;
 use portfolio_db;
+SELECT*from messages;
