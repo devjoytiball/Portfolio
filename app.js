@@ -996,26 +996,22 @@ app.post("/contact", (req, res) => {
 
 app.get("/admin/messages", adminAuth, (req, res) => {
 
-    const sql = `
-        SELECT *
-        FROM messages
-        ORDER BY created_at DESC
-    `;
+    const sql = "SELECT * FROM messages ORDER BY id DESC";
 
-    db.query(sql, (err, results) => {
+    db.query(sql, (err, messages) => {
 
         if (err) {
-            console.error("Messages error:", err);
+            console.error("Messages Database Error:", err);
             return res.status(500).send("Database error");
         }
 
+        console.log("Messages found:", messages);
+
         res.render("admin/messages", {
-            messages: results,
-            adminUsername: req.session.adminUsername
+            messages: messages
         });
 
     });
-
 });
 // ===============================
 // DELETE MESSAGE
