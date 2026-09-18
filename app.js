@@ -1443,7 +1443,7 @@ app.post("/contact", (req, res) => {
     const sql = `
         INSERT INTO contact_messages
         (name, email, phone,subject, message)
-        VALUES (?, ?, ?, ?)
+        VALUES (?, ?, ?, ?,?)
     `;
 
 
