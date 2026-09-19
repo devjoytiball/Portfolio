@@ -986,7 +986,10 @@ app.post("/contact", (req, res) => {
                 result.insertId
             );
 
-            res.redirect("/?message=success#contact");
+            res.render("contact",{
+                success:true,
+                error:null
+            });
         }
     );
 });
